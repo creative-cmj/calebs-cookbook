@@ -1,0 +1,27 @@
+const recipes = [
+  {id:'garlic-paprika-roast-chicken',name:'Garlic Paprika Roast Chicken',category:'Dinner',icon:'🍗',description:'A deeply seasoned whole roast chicken with garlic and paprika.',keywords:'whole chicken roast garlic paprika'},
+  {id:'bacon-shin-ramen-sprint',name:'Bacon Shin Ramen',category:'Dinner',icon:'🍜',description:'Fast spicy ramen with bacon, mushrooms, and eggs for four.',keywords:'noodles spicy soup eggs mushroom'},
+  {id:'cheesy-beefy-tomato-pasta-sprint',name:'Cheesy Beefy Tomato Pasta',category:'Dinner',icon:'🍝',description:'Comforting beef, tomato, pasta, and plenty of cheese.',keywords:'ground beef cheese tomato noodles'},
+  {id:'two-meat-chili-sprint',name:'Two-Meat Chili',category:'Dinner',icon:'🥣',description:'A hearty two-meat chili built for dinner and leftovers.',keywords:'beef sausage beans tomato leftovers'},
+  {id:'spaghetti-meatballs-sprint',name:'Spaghetti & Meatballs',category:'Dinner',icon:'🍝',description:'A phone-first guide for tender meatballs and spaghetti.',keywords:'pasta sauce beef meatballs'},
+  {id:'pork-chop-sprint',name:'Pan-Seared Pork Chops',category:'Dinner',icon:'🥩',description:'A practical skillet plan sized for nine pork chops.',keywords:'pork skillet sear chops'},
+  {id:'birria-taco-sprint',name:'Crispy Birria Tacos',category:'Dinner',icon:'🌮',description:'Slow-cooked birria with crisp, cheesy dipped tacos.',keywords:'beef tacos cheese consome slow cook'},
+  {id:'sloppy-sprint',name:'Brown Sugar Sloppy Joes',category:'Dinner',icon:'🥪',description:'Sweet-savory homemade Sloppy Joes with a saved checklist.',keywords:'ground beef sandwich brown sugar'},
+  {id:'bolognese-step-guide',name:"Tonight's Bolognese",category:'Dinner',icon:'🍲',description:'Beef and Italian sausage bolognese, step by step.',keywords:'pasta beef sausage tomato sauce'},
+  {id:'mac-sprint',name:'Blaze Powder Mac & Cheese',category:'Sides',icon:'🧀',description:'Spicy baked white-cheddar and pepper-jack mac.',keywords:'pasta cheese baked spicy'},
+  {id:'broccoli-sprint',name:'Garlic Butter Broccoli',category:'Sides',icon:'🥦',description:'Tender one-pan broccoli finished with garlic butter.',keywords:'vegetable green pan garlic butter'},
+  {id:'corn-sprint',name:'Buttery Corn on the Cob',category:'Sides',icon:'🌽',description:'Quick, bright corn with a built-in five-minute timer.',keywords:'vegetable boiled butter'},
+  {id:'rib-sprint',name:'Sticky Oven Ribs',category:'Dinner',icon:'🍖',description:'Two racks of low-and-slow ribs with a sauce finish.',keywords:'pork bbq oven slow'},
+  {id:'lemonade-step-guide',name:'Fresh Lemonade',category:'Drinks & Treats',icon:'🍋',description:'A balanced pitcher of fresh-squeezed lemonade.',keywords:'drink lemons sugar cold'},
+  {id:'whip-sprint',name:'Homemade Whipped Cream',category:'Drinks & Treats',icon:'🍨',description:'Cold cream to soft peaks in just a few minutes.',keywords:'dessert cream sweet topping'}
+];
+const grid=document.querySelector('#recipeGrid'),search=document.querySelector('#search'),filters=document.querySelector('#filters'),empty=document.querySelector('#empty'),resultLine=document.querySelector('#resultLine'),viewer=document.querySelector('#viewer'),frame=document.querySelector('#recipeFrame'),viewerTitle=document.querySelector('#viewerTitle'),openDirect=document.querySelector('#openDirect');
+let category='All';
+const categories=['All',...new Set(recipes.map(r=>r.category))];
+filters.innerHTML=categories.map((c,i)=>`<button class="filter${i===0?' active':''}" type="button" data-category="${c}">${c}</button>`).join('');
+function render(){const q=search.value.trim().toLowerCase();const shown=recipes.filter(r=>(category==='All'||r.category===category)&&(!q||`${r.name} ${r.description} ${r.keywords}`.toLowerCase().includes(q)));grid.innerHTML=shown.map(r=>`<article class="recipe"><button type="button" data-id="${r.id}" aria-label="Open ${r.name}"><span class="recipe-icon" aria-hidden="true">${r.icon}</span><span class="recipe-tag">${r.category}</span><h2>${r.name}</h2><p>${r.description}</p><span class="open-label">Open cooking guide →</span></button></article>`).join('');empty.hidden=shown.length!==0;resultLine.textContent=`Showing ${shown.length} of ${recipes.length} recipes`;}
+function openRecipe(id,push=true){const r=recipes.find(x=>x.id===id);if(!r)return;const url=`recipes/${r.id}/index.html`;viewerTitle.textContent=r.name;frame.src=url;openDirect.href=url;viewer.hidden=false;document.body.style.overflow='hidden';if(push)history.pushState({recipe:id},'',`#${id}`);}
+function closeRecipe(push=true){viewer.hidden=true;frame.src='about:blank';document.body.style.overflow='';if(push)history.pushState({},'',location.pathname+location.search);}
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(!b)return;category=b.dataset.category;filters.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));render();});
+search.addEventListener('input',render);grid.addEventListener('click',e=>{const b=e.target.closest('[data-id]');if(b)openRecipe(b.dataset.id);});document.querySelector('#closeViewer').addEventListener('click',()=>closeRecipe());window.addEventListener('popstate',()=>{const id=location.hash.slice(1);id?openRecipe(id,false):closeRecipe(false);});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!viewer.hidden)history.back();});
+render();if(location.hash)openRecipe(location.hash.slice(1),false);

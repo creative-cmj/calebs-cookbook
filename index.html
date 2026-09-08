@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#1a100b">
+  <meta name="description" content="Caleb's complete collection of phone-friendly cooking guides, checklists, and timers.">
+  <title>Caleb's Cookbook</title>
+  <link rel="stylesheet" href="styles.css?v=1">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">ALL YOUR RECIPES • ONE PLACE</p>
+      <h1>Caleb's <span>Cookbook</span></h1>
+      <p class="intro">Pick a recipe and cook from the same checklists, steps, and timers you already use.</p>
+    </div>
+    <div class="count"><strong id="recipeCount">15</strong><span>recipes</span></div>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Find recipes">
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search recipes or ingredients" autocomplete="off"></label>
+      <div class="filters" id="filters" role="group" aria-label="Recipe categories"></div>
+    </section>
+    <p class="result-line" id="resultLine" aria-live="polite"></p>
+    <section class="recipe-grid" id="recipeGrid" aria-label="Recipes"></section>
+    <section class="empty" id="empty" hidden><h2>No recipes found</h2><p>Try another search or category.</p></section>
+  </main>
+
+  <div class="viewer" id="viewer" hidden>
+    <div class="viewer-bar">
+      <button id="closeViewer" class="back" type="button">← All recipes</button>
+      <strong id="viewerTitle"></strong>
+      <a id="openDirect" target="_blank" rel="noopener">Open full screen</a>
+    </div>
+    <iframe id="recipeFrame" title="Selected recipe" loading="eager"></iframe>
+  </div>
+
+  <footer>Built for real dinners, sides, drinks, and leftovers.</footer>
+  <script src="app.js?v=1"></script>
+</body>
+</html>
