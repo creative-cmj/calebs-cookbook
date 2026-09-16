@@ -13,7 +13,8 @@ const recipes = [
   {id:'corn-sprint',name:'Buttery Corn on the Cob',category:'Sides',icon:'🌽',description:'Quick, bright corn with a built-in five-minute timer.',keywords:'vegetable boiled butter'},
   {id:'rib-sprint',name:'Sticky Oven Ribs',category:'Dinner',icon:'🍖',description:'Two racks of low-and-slow ribs with a sauce finish.',keywords:'pork bbq oven slow'},
   {id:'lemonade-step-guide',name:'Fresh Lemonade',category:'Drinks & Treats',icon:'🍋',description:'A balanced pitcher of fresh-squeezed lemonade.',keywords:'drink lemons sugar cold'},
-  {id:'whip-sprint',name:'Homemade Whipped Cream',category:'Drinks & Treats',icon:'🍨',description:'Cold cream to soft peaks in just a few minutes.',keywords:'dessert cream sweet topping'}
+  {id:'whip-sprint',name:'Homemade Whipped Cream',category:'Drinks & Treats',icon:'🍨',description:'Cold cream to soft peaks in just a few minutes.',keywords:'dessert cream sweet topping'},
+  {id:'smoky-sausage-stuffed-peppers',name:'Smoky Sausage Stuffed Peppers',category:'Dinner',icon:'🫑',description:'Ten roasted peppers packed with beef, sausage, fire-roasted tomatoes, rice, and mozzarella.',keywords:'bell peppers ground beef italian sausage rice mozzarella baked leftovers'}
 ];
 const grid=document.querySelector('#recipeGrid'),search=document.querySelector('#search'),filters=document.querySelector('#filters'),empty=document.querySelector('#empty'),resultLine=document.querySelector('#resultLine'),viewer=document.querySelector('#viewer'),frame=document.querySelector('#recipeFrame'),viewerTitle=document.querySelector('#viewerTitle'),openDirect=document.querySelector('#openDirect');
 let category='All';
