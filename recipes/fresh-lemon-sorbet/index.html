@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#fff6be">
+  <meta name="description" content="A bright fresh lemon sorbet with a saved shopping checklist and freezer timers.">
+  <title>Fresh Lemon Sorbet</title>
+  <style>
+    :root{--cream:#fffce7;--lemon:#ffe56a;--yellow:#ffc900;--sun:#f39a00;--ink:#27210c;--muted:#705e26;--panel:#fff8c7;--line:#e7c84c;--good:#23835d}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 8% 0,#fff 0,transparent 30%),radial-gradient(circle at 90% 0,#ffe365 0,transparent 25%),var(--cream);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}.wrap{width:min(760px,100%);margin:auto;padding:18px 14px 52px}.hero{padding:23px 7px 15px}.eyebrow{margin:0 0 7px;color:#916100;font-weight:900;font-size:.76rem;letter-spacing:.13em}.hero h1{margin:0;font-size:clamp(2.6rem,12vw,5rem);line-height:.86;letter-spacing:-.065em}.hero h1 em{font-style:normal;color:var(--sun)}.hero p{max-width:610px;color:var(--muted);font-size:1.02rem;margin:15px 0}.chips{display:flex;flex-wrap:wrap;gap:8px}.chip{border:1px solid var(--line);background:#fff9d5;padding:7px 10px;border-radius:999px;font-weight:800;font-size:.85rem}.jump{position:sticky;top:0;z-index:3;display:flex;gap:8px;overflow:auto;padding:10px 0;background:linear-gradient(var(--cream) 72%,transparent)}.jump a{white-space:nowrap;color:var(--ink);text-decoration:none;background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 11px;font-weight:800;font-size:.86rem}section{margin:18px 0;padding:17px;border:1px solid var(--line);border-radius:20px;background:linear-gradient(145deg,#fffde8,var(--panel));box-shadow:0 14px 30px #98760c17}.heading{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:1px solid #e7c84c99;padding-bottom:10px;margin-bottom:11px}.heading h2{margin:0;font-size:1.25rem}.heading small{color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}.ingredient{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid #e7c84c55;cursor:pointer}.ingredient:last-child{border:0}.ingredient input{width:19px;height:19px;accent-color:var(--sun);margin-top:2px;flex:0 0 auto}.ingredient:has(input:checked) span{text-decoration:line-through;color:var(--muted)}.callout{border-left:4px solid var(--sun);padding:11px 12px;background:#fff0a9;color:#654900;border-radius:0 12px 12px 0;font-size:.94rem}.step{display:grid;grid-template-columns:31px 1fr;gap:11px;padding:12px 0;border-bottom:1px solid #e7c84c66}.step:last-child{border:0}.num{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;background:var(--yellow);font-weight:950;color:#503600}.step h3{margin:0 0 4px;font-size:1.04rem}.step p{margin:0;color:var(--muted)}.timer{margin-top:12px;border:1px solid #d8b72c;background:#fffde8;border-radius:14px;padding:12px}.timer-top{display:flex;justify-content:space-between;gap:12px;font-weight:800;font-size:.84rem;color:var(--muted)}.clock{font-variant-numeric:tabular-nums;font-size:2rem;line-height:1;margin:8px 0 10px;font-weight:950;letter-spacing:-.05em}.timer button{border:1px solid #a87700;border-radius:9px;background:var(--yellow);padding:8px 11px;font-weight:900;color:#493200}.timer .secondary{background:transparent;border-color:var(--line);margin-left:6px}.serve{display:grid;grid-template-columns:1fr 1fr;gap:10px}.serve>div{border:1px solid #e7c84c;background:#fffde8;padding:12px;border-radius:13px;color:var(--muted);font-size:.91rem}.serve b{color:var(--ink);display:block;margin-bottom:5px;font-size:.75rem;letter-spacing:.08em}.foot{text-align:center;color:var(--muted);font-size:.8rem;margin:22px 0 0}@media(max-width:560px){.split,.serve{grid-template-columns:1fr}.hero h1{font-size:3.3rem}section{padding:14px}.jump{margin-inline:-2px}.timer button{font-size:.8rem;padding:8px}.clock{font-size:1.8rem}}
+  </style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <p class="eyebrow">COLD, BRIGHT + SCOOPABLE</p>
+    <h1>Fresh <em>Lemon</em><br>Sorbet</h1>
+    <p>A sharp, sunny freezer sorbet made with real lemons. No ice-cream machine needed—just scrape and stir as it freezes.</p>
+    <div class="chips"><span class="chip">🍋 6–8 lemons</span><span class="chip">🍨 6 servings</span><span class="chip">❄ about 3½ hrs total</span></div>
+  </header>
+
+  <nav class="jump"><a href="#shop">Shopping</a><a href="#syrup">Make syrup</a><a href="#chill">Chill</a><a href="#freeze">Freeze</a></nav>
+
+  <section id="shop">
+    <div class="heading"><h2>Shopping checklist</h2><small id="count">0 / 5 ready</small></div>
+    <div class="split">
+      <div>
+        <p class="eyebrow">THE BASE</p>
+        <label class="ingredient"><input data-check="0" type="checkbox"><span>1½ cups fresh lemon juice (about 6–8 lemons)</span></label>
+        <label class="ingredient"><input data-check="1" type="checkbox"><span>1 cup sugar</span></label>
+        <label class="ingredient"><input data-check="2" type="checkbox"><span>1 cup water</span></label>
+      </div>
+      <div>
+        <p class="eyebrow">BRIGHT FINISH</p>
+        <label class="ingredient"><input data-check="3" type="checkbox"><span>1 tbsp finely grated lemon zest</span></label>
+        <label class="ingredient"><input data-check="4" type="checkbox"><span>Tiny pinch of salt</span></label>
+      </div>
+    </div>
+  </section>
+
+  <section id="syrup">
+    <div class="heading"><h2>Make the lemon syrup</h2><small>About 15 minutes</small></div>
+    <div class="callout"><b>Best texture:</b> Use a metal loaf pan or another shallow metal pan for faster, smoother freezing. Wash the lemons before zesting.</div>
+    <article class="step"><span class="num">1</span><div><h3>Dissolve the sugar</h3><p>Add the sugar and water to a small pot. Warm over medium heat, stirring, just until the liquid turns clear and the sugar is fully dissolved. Do not boil it hard.</p></div></article>
+    <article class="step"><span class="num">2</span><div><h3>Steep the zest</h3><p>Take the pot off the heat. Stir in the lemon zest and tiny pinch of salt. Let it sit so the zest flavors the syrup.</p><div class="timer" data-timer="steep" data-seconds="900"><div class="timer-top"><span>Zest steep</span><span data-state>Ready</span></div><div class="clock">15:00</div><button data-start>Start</button><button class="secondary" data-pause>Pause</button><button class="secondary" data-reset>Reset</button></div></div></article>
+    <article class="step"><span class="num">3</span><div><h3>Add the fresh lemon</h3><p>Strain out the zest if you want a perfectly smooth sorbet, then stir in all 1½ cups of lemon juice. Taste it: it should be bold and a little sweeter than you want the finished sorbet, since freezing dulls sweetness.</p></div></article>
+  </section>
+
+  <section id="chill">
+    <div class="heading"><h2>Chill the base</h2><small>Do not skip</small></div>
+    <article class="step"><span class="num">4</span><div><h3>Get it cold first</h3><p>Cover the lemon mixture and refrigerate until cold—at least 1 hour. A cold base freezes into smaller ice crystals, which makes the sorbet smoother.</p><div class="timer" data-timer="chill" data-seconds="3600"><div class="timer-top"><span>Fridge chill</span><span data-state>Ready</span></div><div class="clock">1:00:00</div><button data-start>Start</button><button class="secondary" data-pause>Pause</button><button class="secondary" data-reset>Reset</button></div></div></article>
+  </section>
+
+  <section id="freeze">
+    <div class="heading"><h2>Freeze, scrape, repeat</h2><small>About 2½ hrs</small></div>
+    <article class="step"><span class="num">5</span><div><h3>First freeze</h3><p>Pour the cold base into a shallow metal pan. Freeze it uncovered for 45 minutes, until the edges are icy and the center is slushy.</p><div class="timer" data-timer="first-freeze" data-seconds="2700"><div class="timer-top"><span>First freezer round</span><span data-state>Ready</span></div><div class="clock">45:00</div><button data-start>Start</button><button class="secondary" data-pause>Pause</button><button class="secondary" data-reset>Reset</button></div></div></article>
+    <article class="step"><span class="num">6</span><div><h3>Scrape it hard</h3><p>Use a fork to scrape the frozen edges into the middle, then whisk or mash until the mixture looks like a thick lemon slush. Break up every icy chunk you can find.</p></div></article>
+    <article class="step"><span class="num">7</span><div><h3>Repeat three more times</h3><p>Freeze, scrape, and stir again every 35 minutes. After the third repeat, it should be fluffy, smooth, and scoopable. If it gets too firm, let it sit on the counter 5–10 minutes before scooping.</p><div class="timer" data-timer="repeat-freeze" data-seconds="2100"><div class="timer-top"><span>Repeat freezer round</span><span data-state>Ready</span></div><div class="clock">35:00</div><button data-start>Start 35 min</button><button class="secondary" data-pause>Pause</button><button class="secondary" data-reset>Reset</button></div></div></article>
+  </section>
+
+  <section>
+    <div class="heading"><h2>Serve + save it</h2><small>Best fresh</small></div>
+    <div class="serve"><div><b>SERVE IT</b>Scoop into chilled bowls. Add a little lemon zest, a thin lemon slice, or crushed vanilla cookies if you want a small crunch.</div><div><b>LEFTOVERS</b>Cover tightly and freeze. It will firm up overnight; let it soften 10 minutes, then scrape with a fork before serving.</div></div>
+  </section>
+  <p class="foot">Checklist and timers save on this browser/device.</p>
+</main>
+<script>
+const key='fresh-lemon-sorbet-v1';const saved=JSON.parse(localStorage.getItem(key)||'{}');const boxes=[...document.querySelectorAll('[data-check]')];function paint(){let n=0;boxes.forEach(b=>{b.checked=!!saved[b.dataset.check];if(b.checked)n++});document.querySelector('#count').textContent=`${n} / ${boxes.length} ready`}boxes.forEach(b=>b.onchange=()=>{saved[b.dataset.check]=b.checked;localStorage.setItem(key,JSON.stringify(saved));paint()});paint();
+function format(seconds){seconds=Math.max(0,Math.ceil(seconds));const hours=Math.floor(seconds/3600),minutes=Math.floor(seconds%3600/60),rest=seconds%60;return hours?`${hours}:${String(minutes).padStart(2,'0')}:${String(rest).padStart(2,'0')}`:`${minutes}:${String(rest).padStart(2,'0')}`}document.querySelectorAll('[data-timer]').forEach(card=>{const name=card.dataset.timer,base=Number(card.dataset.seconds),store=`fresh-lemon-sorbet-timer-${name}`;let state=JSON.parse(localStorage.getItem(store)||'null')||{remaining:base,running:false,end:0};const clock=card.querySelector('.clock'),stateText=card.querySelector('[data-state]'),start=card.querySelector('[data-start]');function left(){return state.running?Math.max(0,(state.end-Date.now())/1000):state.remaining}function draw(){if(state.running&&left()<=0)state={remaining:0,running:false,end:0};const remaining=left();clock.textContent=format(remaining);stateText.textContent=state.running?'Running…':remaining===0?'Finished':'Ready';start.textContent=state.running?'Running…':remaining===0?'Finished':name==='repeat-freeze'?'Start 35 min':'Start';localStorage.setItem(store,JSON.stringify(state))}setInterval(draw,250);draw();start.onclick=()=>{if(state.running||state.remaining===0)return;state.end=Date.now()+state.remaining*1000;state.running=true;draw()};card.querySelector('[data-pause]').onclick=()=>{if(!state.running)return;state.remaining=left();state.running=false;state.end=0;draw()};card.querySelector('[data-reset]').onclick=()=>{state={remaining:base,running:false,end:0};draw()}});
+</script>
+</body>
+</html>
